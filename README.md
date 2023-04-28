@@ -1,2 +1,14 @@
 # Projects_Public
-This is the customer-facing repository, which is a supplement to the official SDK. 
+
+# 版权声明
+  * 该仓库内的代码对所有用户开放；
+  * 该仓库内的代码版权归INGCHIPS所有；
+  * 该仓库内的代码不保证没有问题，请测试后使用；
+  * 该仓库内的代码遵循MIT协议，详情见LICENSE，同时补充如下条款：
+    * 此代码仅作为参考使用，如果任何组织或个人在使用此仓库的代码时造成了任意损失，不作为主张索赔权利的依据；
+    * 如果不接受上面这一点儿，请不要使用该仓库的代码。
+  * 此仓库代码由INGCHIPS员工进行维护；
+
+# 项目介绍
+  * 
+

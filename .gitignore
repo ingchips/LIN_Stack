@@ -1,0 +1,9 @@
+*.un~
+*.swp
+*.bak
+*.map
+*.bin
+!bundles/**/*.bin
+JLinkLog.txt
+JLinkSettings.ini
+.vscode
