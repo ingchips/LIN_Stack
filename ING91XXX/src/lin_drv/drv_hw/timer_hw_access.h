@@ -1,6 +1,6 @@
 #ifndef TIMER_HW_ACCESS_H__
 #define TIMER_HW_ACCESS_H__
-#include "ING91870CQ.h"
+#include "ING91XXX.h"
 #ifdef USE_LIN_TIMER
 
 typedef void (*LTI_Handler_t)(uint32_t);

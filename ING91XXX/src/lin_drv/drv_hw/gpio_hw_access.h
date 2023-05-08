@@ -1,7 +1,7 @@
 #ifndef GPIO_HW_ACCESS_H__
 #define GPIO_HW_ACCESS_H__
 
-#include "ING91870CQ.h"
+#include "ING91XXX.h"
 #include "status.h"
 
 /* Set gpio interrupt edge, 0:disable. */

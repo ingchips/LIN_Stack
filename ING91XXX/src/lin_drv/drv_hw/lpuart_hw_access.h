@@ -1,7 +1,7 @@
 #ifndef LPUART_HW_ACCESS_H__
 #define LPUART_HW_ACCESS_H__
 
-#include "ING91870CQ.h"
+#include "ING91XXX.h"
 #include "status.h"
 #include "devassert.h"
 #include "peripheral_uart.h"

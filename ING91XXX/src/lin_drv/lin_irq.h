@@ -7,7 +7,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 #include "status.h"
-#include "ING91870CQ.h"
+#include "ING91XXX.h"
 
 
 /* Table to save ISR pointers for LPUART instances */

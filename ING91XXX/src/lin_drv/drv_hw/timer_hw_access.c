@@ -2,7 +2,7 @@
 #include <stdint.h>
 #include <stdbool.h>
 #include "timer_hw_access.h"
-#include "ING91870CQ.h"
+#include "ING91XXX.h"
 #ifdef USE_LIN_TIMER
 
 #define LIN_TIMER_SEL               APB_TMR2

@@ -1,6 +1,6 @@
 
-#ifndef __ING91870CQ_H__
-#define __ING91870CQ_H__
+#ifndef __ING91XXX_H__
+#define __ING91XXX_H__
 
 #include <stdint.h>
 #include "stdbool.h"

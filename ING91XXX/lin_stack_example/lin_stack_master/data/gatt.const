@@ -1,0 +1,10 @@
+#define HANDLE_DEVICE_NAME                                   3
+#define HANDLE_APPEARANCE                                    5
+#define HANDLE_SERVICE_CHANGED                               8
+#define HANDLE_SERVICE_CHANGED_CLIENT_CHAR_CONFIG            9
+
+#define HANDLE_DEVICE_NAME_OFFSET                            31
+#define HANDLE_APPEARANCE_OFFSET                             52
+#define HANDLE_SERVICE_CHANGED_OFFSET                        83
+#define HANDLE_SERVICE_CHANGED_CLIENT_CHAR_CONFIG_OFFSET     91
+

@@ -1,7 +1,7 @@
 #ifndef IRQ_HW_ACCESS_H__
 #define IRQ_HW_ACCESS_H__
 
-#include "ING91870CQ.h"
+#include "ING91XXX.h"
 #include "status.h"
 
 
