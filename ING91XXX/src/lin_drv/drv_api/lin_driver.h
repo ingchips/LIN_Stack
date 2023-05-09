@@ -20,7 +20,6 @@
 #include "status.h"
 #include "osif.h"
 #include "devassert.h"
-#include "lin_ingsoc.h"
 #ifndef LIN_STACK_GEN_LIB
 #include "lin_irq.h"
 #include "lin_user_def.h"
@@ -465,6 +464,14 @@ status_t LIN_DRV_EnableIRQ(uint32_t instance);
  * @return function always return STATUS_SUCCESS.
  */
 status_t LIN_DRV_DisableIRQ(uint32_t instance);
+
+/*!
+ * @brief Enable/Disable LIN global interrupts.
+ */;
+void LIN_DRV_EnableGlobalIRQ(void);
+void LIN_DRV_DisableGlobalIRQ(void);
+#define DISABLE_INTERRUPTS                       LIN_DRV_DisableGlobalIRQ
+#define ENABLE_INTERRUPTS                        LIN_DRV_EnableGlobalIRQ
 
 /*!
  * @brief Interrupt handler for LIN Hardware Interface.

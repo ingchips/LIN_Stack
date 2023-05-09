@@ -548,6 +548,11 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\src\lin_drv\drv_hw\timer_hw_access.c</FilePath>
             </File>
+            <File>
+              <FileName>ING91XXX.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\src\lin_drv\ING91XXX.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

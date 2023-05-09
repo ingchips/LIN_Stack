@@ -450,6 +450,28 @@ status_t LIN_DRV_DisableIRQ(uint32_t instance)
 
 /*FUNCTION**********************************************************************
  *
+ * Function Name : LIN_DRV_EnableGlobalIRQ
+ * Description   : It is implemented differently in the cm3 and cm4 kernels.
+ *
+ *END**************************************************************************/
+void LIN_DRV_EnableGlobalIRQ(void)
+{
+    __enable_irq();
+}
+
+/*FUNCTION**********************************************************************
+ *
+ * Function Name : LIN_DRV_DisableGlobalIRQ
+ * Description   : It is implemented differently in the cm3 and cm4 kernels.
+ *
+ *END**************************************************************************/
+void LIN_DRV_DisableGlobalIRQ(void)
+{
+    __disable_irq();
+}
+
+/*FUNCTION**********************************************************************
+ *
  * Function Name : LIN_DRV_IRQHandler
  * Description   : Interrupt handler for LIN Hardware Interface.
  * This is not a public API as it is called by IRQ whenever an interrupt
