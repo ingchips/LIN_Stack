@@ -49,14 +49,14 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\output\</OutputDirectory>
-          <OutputName>lin_stack_master</OutputName>
+          <OutputName>lin_stack_master_916xx</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\listing\</ListingPath>
-          <HexFormatSelection>1</HexFormatSelection>
+          <HexFormatSelection>0</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
           <BeforeCompile>
@@ -82,14 +82,14 @@
           <AfterMake>
             <RunUserProg1>1</RunUserProg1>
             <RunUserProg2>0</RunUserProg2>
-            <UserProg1Name>fromelf.exe --bin -o lin_stack_master.bin ./output/lin_stack_master.axf</UserProg1Name>
+            <UserProg1Name>fromelf.exe --bin -o lin_stack_master_916xx.bin ./output/lin_stack_master_916xx.axf</UserProg1Name>
             <UserProg2Name></UserProg2Name>
             <UserProg1Dos16Mode>0</UserProg1Dos16Mode>
             <UserProg2Dos16Mode>0</UserProg2Dos16Mode>
             <nStopA1X>0</nStopA1X>
             <nStopA2X>0</nStopA2X>
           </AfterMake>
-          <SelectedForBatchBuild>0</SelectedForBatchBuild>
+          <SelectedForBatchBuild>1</SelectedForBatchBuild>
           <SVCSIdString></SVCSIdString>
         </TargetCommonOption>
         <CommonProperty>
@@ -110,17 +110,17 @@
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
-          <SimDllArguments>  -MPU</SimDllArguments>
+          <SimDllArguments>-MPU</SimDllArguments>
           <SimDlgDll>DCM.DLL</SimDlgDll>
           <SimDlgDllArguments>-pCM3</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
-          <TargetDllArguments> -MPU</TargetDllArguments>
+          <TargetDllArguments>-MPU</TargetDllArguments>
           <TargetDlgDll>TCM.DLL</TargetDlgDll>
           <TargetDlgDllArguments>-pCM3</TargetDlgDllArguments>
         </DllOption>
         <DebugOption>
           <OPTHX>
-            <HexSelection>1</HexSelection>
+            <HexSelection>0</HexSelection>
             <HexRangeLowAddress>0</HexRangeLowAddress>
             <HexRangeHighAddress>0</HexRangeHighAddress>
             <HexOffset>0</HexOffset>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,  BOARD_ID=BOARD_DB72C8K1A, BOARD_USE_RGB_LED</Define>
               <Undefine></Undefine>
-              <IncludePath>../../../ING918XX_SDK_SOURCE/bundles/typical/inc;../../../ING918XX_SDK_SOURCE/bundles/typical/inc/os;../../../ING918XX_SDK_SOURCE/src/BSP;../../../ING918XX_SDK_SOURCE/src/FWlib;../../../ING918XX_SDK_SOURCE/src/StartUP/ing916;../../../ING918XX_SDK_SOURCE/src/Tools;../../../ING918XX_SDK_SOURCE/src;.\src;.\src\lin_board;.\src\platform_supplement;..\src\lin_driver;..\lin_stack_lib\include</IncludePath>
+              <IncludePath>../../../../../ING918XX_SDK_SOURCE/bundles/typical/inc;../../../../../ING918XX_SDK_SOURCE/bundles/typical/inc/os;../../../../../ING918XX_SDK_SOURCE/src/BSP;../../../../../ING918XX_SDK_SOURCE/src/FWlib;../../../../../ING918XX_SDK_SOURCE/src/StartUP/ing916;../../../../../ING918XX_SDK_SOURCE/src/Tools;../../../../../ING918XX_SDK_SOURCE/src;..\src;..\src\lin_cfg;..\src\platform_supplement;..\..\..\src\lin_drv;..\..\..\src\lin_drv\drv_api;..\..\..\src\lin_drv\drv_hw;..\..\..\src\lin_stack_lib\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -386,17 +386,22 @@
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\main.c</FilePath>
+              <FilePath>..\src\main.c</FilePath>
             </File>
             <File>
               <FileName>profile.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\profile.c</FilePath>
+              <FilePath>..\src\profile.c</FilePath>
             </File>
             <File>
               <FileName>lin_stack_task.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\lin_stack_task.c</FilePath>
+              <FilePath>..\src\lin_stack_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>lin_user_def.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\src\lin_user_def.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -406,12 +411,12 @@
             <File>
               <FileName>key.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\platform_supplement\key.c</FilePath>
+              <FilePath>..\src\platform_supplement\key.c</FilePath>
             </File>
             <File>
               <FileName>gpio_irq_management.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\src\platform_supplement\gpio_irq_management.c</FilePath>
+              <FilePath>..\src\platform_supplement\gpio_irq_management.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -421,12 +426,12 @@
             <File>
               <FileName>startup_ing91600.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\src\startup_ing91600.s</FilePath>
+              <FilePath>..\src\startup_ing91600.s</FilePath>
             </File>
             <File>
               <FileName>symdefs.m</FileName>
               <FileType>3</FileType>
-              <FilePath>../../../ING918XX_SDK_SOURCE\bundles\typical\ING9168xx\symdefs.m</FilePath>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\bundles\typical\ING9168xx\symdefs.m</FilePath>
             </File>
           </Files>
         </Group>
@@ -436,12 +441,12 @@
             <File>
               <FileName>eflash.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\ING918XX_SDK_SOURCE\src\BSP\eflash.c</FilePath>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\BSP\eflash.c</FilePath>
             </File>
             <File>
               <FileName>board.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\ING918XX_SDK_SOURCE\src\BSP\board.c</FilePath>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\BSP\board.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -451,32 +456,32 @@
             <File>
               <FileName>peripheral_uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_uart.c</FilePath>
-            </File>
-            <File>
-              <FileName>peripheral_pinctrl.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_pinctrl.c</FilePath>
-            </File>
-            <File>
-              <FileName>peripheral_sysctrl.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_sysctrl.c</FilePath>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_uart.c</FilePath>
             </File>
             <File>
               <FileName>peripheral_timer.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_timer.c</FilePath>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_sysctrl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_sysctrl.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_pinctrl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_pinctrl.c</FilePath>
             </File>
             <File>
               <FileName>peripheral_gpio.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_gpio.c</FilePath>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_gpio.c</FilePath>
             </File>
             <File>
               <FileName>peripheral_pwm.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_pwm.c</FilePath>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_pwm.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -486,17 +491,7 @@
             <File>
               <FileName>trace.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../../../ING918XX_SDK_SOURCE\src\Tools\trace.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>lin_board</GroupName>
-          <Files>
-            <File>
-              <FileName>lin_cfg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\src\lin_board\lin_cfg.c</FilePath>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\Tools\trace.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -504,59 +499,74 @@
           <GroupName>lin_driver</GroupName>
           <Files>
             <File>
-              <FileName>clock_hw_access.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\lin_driver\clock_hw_access.c</FilePath>
-            </File>
-            <File>
-              <FileName>gpio_hw_access.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\lin_driver\gpio_hw_access.c</FilePath>
-            </File>
-            <File>
-              <FileName>irq_hw_access.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\lin_driver\irq_hw_access.c</FilePath>
-            </File>
-            <File>
-              <FileName>timer_hw_access.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\lin_driver\timer_hw_access.c</FilePath>
-            </File>
-            <File>
-              <FileName>lpuart_hw_access.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\src\lin_driver\lpuart_hw_access.c</FilePath>
-            </File>
-            <File>
               <FileName>lin_common.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\src\lin_driver\lin_common.c</FilePath>
+              <FilePath>..\..\..\src\lin_drv\lin_common.c</FilePath>
             </File>
             <File>
               <FileName>lin_driver.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\src\lin_driver\lin_driver.c</FilePath>
+              <FilePath>..\..\..\src\lin_drv\lin_driver.c</FilePath>
             </File>
             <File>
               <FileName>lin_irq.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\src\lin_driver\lin_irq.c</FilePath>
+              <FilePath>..\..\..\src\lin_drv\lin_irq.c</FilePath>
             </File>
             <File>
               <FileName>lin_lpuart_driver.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\src\lin_driver\lin_lpuart_driver.c</FilePath>
+              <FilePath>..\..\..\src\lin_drv\lin_lpuart_driver.c</FilePath>
             </File>
             <File>
               <FileName>osif.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\src\lin_driver\osif.c</FilePath>
+              <FilePath>..\..\..\src\lin_drv\osif.c</FilePath>
             </File>
             <File>
               <FileName>peripherals_lin_0.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\src\lin_driver\peripherals_lin_0.c</FilePath>
+              <FilePath>..\..\..\src\lin_drv\peripherals_lin_0.c</FilePath>
+            </File>
+            <File>
+              <FileName>clock_hw_access.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\src\lin_drv\drv_hw\clock_hw_access.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpio_hw_access.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\src\lin_drv\drv_hw\gpio_hw_access.c</FilePath>
+            </File>
+            <File>
+              <FileName>irq_hw_access.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\src\lin_drv\drv_hw\irq_hw_access.c</FilePath>
+            </File>
+            <File>
+              <FileName>lpuart_hw_access.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\src\lin_drv\drv_hw\lpuart_hw_access.c</FilePath>
+            </File>
+            <File>
+              <FileName>timer_hw_access.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\src\lin_drv\drv_hw\timer_hw_access.c</FilePath>
+            </File>
+            <File>
+              <FileName>ING91XXX.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\src\lin_drv\ING91XXX.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>lin_cfg</GroupName>
+          <Files>
+            <File>
+              <FileName>lin_cfg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\lin_cfg\lin_cfg.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -564,9 +574,9 @@
           <GroupName>lin_stack</GroupName>
           <Files>
             <File>
-              <FileName>..\..\..\002-GITHUB\Projects_LZK\LIN_Demo_916\lin_stack_lib\lin_stack_master_lib.lib</FileName>
+              <FileName>lin_stack_master_lib.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>$TC_ROOT$\..\..\..\002-GITHUB\Projects_LZK\LIN_Demo_916\lin_stack_lib\lin_stack_master_lib.lib</FilePath>
+              <FilePath>..\..\..\src\lin_stack_lib\lin_stack_master_lib.lib</FilePath>
             </File>
           </Files>
         </Group>
