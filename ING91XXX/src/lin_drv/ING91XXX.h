@@ -110,8 +110,17 @@ typedef UART_TypeDef LPUART_Type;
 #define LPUART0                                  APB_UART0
 #define LPUART1                                  APB_UART1
 
+#if (USE_ING918X)
 #define UART0_CLK                                OSC_CLK_FREQ
 #define UART1_CLK                                OSC_CLK_FREQ
+#define SYSCTRL_Reset_APB_UART0                  SYSCTRL_Reset_APB_SCI0
+#define SYSCTRL_Reset_APB_UART1                  SYSCTRL_Reset_APB_SCI1
+#else
+#define UART0_CLK                                SYSCTRL_GetClk(SYSCTRL_ITEM_APB_UART0)
+#define UART1_CLK                                SYSCTRL_GetClk(SYSCTRL_ITEM_APB_UART1)
+#define SYSCTRL_Reset_APB_UART0                  SYSCTRL_ITEM_APB_UART0
+#define SYSCTRL_Reset_APB_UART1                  SYSCTRL_ITEM_APB_UART1
+#endif
 
 #define UART0_IRQ                                PLATFORM_CB_IRQ_UART0
 #define UART1_IRQ                                PLATFORM_CB_IRQ_UART1

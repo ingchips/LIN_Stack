@@ -15,13 +15,13 @@ void LPUART_Reboot(LPUART_Type * base)
 {
     if (base == APB_UART0)
     {
-        SYSCTRL_ResetBlock(SYSCTRL_Reset_APB_SCI0);
-        SYSCTRL_ReleaseBlock(SYSCTRL_Reset_APB_SCI0);
+        SYSCTRL_ResetBlock(SYSCTRL_Reset_APB_UART0);
+        SYSCTRL_ReleaseBlock(SYSCTRL_Reset_APB_UART0);
     }
     else if (base == APB_UART1)
     {
-        SYSCTRL_ResetBlock(SYSCTRL_Reset_APB_SCI1);
-        SYSCTRL_ReleaseBlock(SYSCTRL_Reset_APB_SCI1);
+        SYSCTRL_ResetBlock(SYSCTRL_Reset_APB_UART1);
+        SYSCTRL_ReleaseBlock(SYSCTRL_Reset_APB_UART1);
     }
 }
 
