@@ -603,7 +603,7 @@
   <LayerInfo>
     <Layers>
       <Layer>
-        <LayName>lin_stack_slave</LayName>
+        <LayName>lin_stack_slave_916xx</LayName>
         <LayPrjMark>1</LayPrjMark>
       </Layer>
     </Layers>
