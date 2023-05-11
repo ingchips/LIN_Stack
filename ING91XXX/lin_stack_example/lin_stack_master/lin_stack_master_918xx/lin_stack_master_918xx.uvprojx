@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,  BOARD_ID=BOARD_ING91881B_02_02_05, BOARD_USE_RGB_LED</Define>
               <Undefine></Undefine>
-              <IncludePath>../../../../../ING918XX_SDK_SOURCE/bundles/typical/inc;../../../../../ING918XX_SDK_SOURCE/bundles/typical/inc/os;../../../../../ING918XX_SDK_SOURCE/src/BSP;../../../../../ING918XX_SDK_SOURCE/src/FWlib;../../../../../ING918XX_SDK_SOURCE/src/StartUP/ing918;../../../../../ING918XX_SDK_SOURCE/src/Tools;../../../../../ING918XX_SDK_SOURCE/src;..\src;..\src\lin_cfg;..\src\platform_supplement;..\..\..\src\lin_drv;..\..\..\src\lin_drv\drv_api;..\..\..\src\lin_drv\drv_hw;..\..\..\src\lin_stack_lib\include</IncludePath>
+              <IncludePath>../../../../../ING918XX_SDK_SOURCE/bundles/typical/inc;../../../../../ING918XX_SDK_SOURCE/bundles/typical/inc/os;../../../../../ING918XX_SDK_SOURCE/src/BSP;../../../../../ING918XX_SDK_SOURCE/src/FWlib;../../../../../ING918XX_SDK_SOURCE/src/StartUP/ing918;../../../../../ING918XX_SDK_SOURCE/src/Tools;../../../../../ING918XX_SDK_SOURCE/src;..\src;..\src\lin_cfg;..\..\..\src\platform_supplement;..\..\..\src\lin_drv;..\..\..\src\lin_drv\drv_api;..\..\..\src\lin_drv\drv_hw;..\..\..\src\lin_stack_lib\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -411,12 +411,12 @@
             <File>
               <FileName>key.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\src\platform_supplement\key.c</FilePath>
+              <FilePath>..\..\..\src\platform_supplement\key.c</FilePath>
             </File>
             <File>
               <FileName>gpio_irq_management.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\src\platform_supplement\gpio_irq_management.c</FilePath>
+              <FilePath>..\..\..\src\platform_supplement\gpio_irq_management.c</FilePath>
             </File>
           </Files>
         </Group>
