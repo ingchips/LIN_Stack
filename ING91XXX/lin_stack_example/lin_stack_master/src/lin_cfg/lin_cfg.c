@@ -19,6 +19,7 @@
  */
 
 #include "lin.h"
+#include "peripherals_lin_0.h"
 
 #if (SUPPORT_TRANSPORT_LAYER == 1U)
 static lin_tl_pdu_data_t      LI0_tl_tx_queue_data[2];

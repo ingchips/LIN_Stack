@@ -11,7 +11,7 @@
 
 
 /* Table to save ISR pointers for LPUART instances */
-extern lin_isr_t g_linLpuartIsrs[LPUART_INSTANCE_COUNT];
-extern lin_isr_t g_linGpioIsrs[LPUART_INSTANCE_COUNT];
+extern lin_isr_t g_linLpuartIsrs[];
+extern lin_isr_t g_linGpioIsrs[];
 
 #endif

@@ -19,6 +19,7 @@
  */
 
 #include "lin.h"
+#include "peripherals_lin_0.h"
 
 static const l_u8 LI0_lin_diag_services_supported[LI0_DIAG_NUMBER_OF_SERVICES] = {0xB2, 0xB7};
 static l_u8 LI0_lin_diag_services_flag[LI0_DIAG_NUMBER_OF_SERVICES] = {0, 0};

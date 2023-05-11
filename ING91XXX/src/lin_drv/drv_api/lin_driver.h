@@ -20,10 +20,6 @@
 #include "status.h"
 #include "osif.h"
 #include "devassert.h"
-#ifndef LIN_STACK_GEN_LIB
-#include "lin_irq.h"
-#include "lin_user_def.h"
-#endif
 
 /*!
  * @addtogroup lin_driver

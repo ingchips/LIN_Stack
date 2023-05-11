@@ -13,6 +13,7 @@
 #include "lpuart_hw_access.h"
 #include "clock_hw_access.h"
 #include "irq_hw_access.h"
+#include "lin_irq.h"
 #include "lin_driver.h"
 
 /*******************************************************************************

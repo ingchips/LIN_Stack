@@ -12,6 +12,7 @@
  * Includes
  ******************************************************************************/
 #include "lin_driver.h"
+#include "ING91XXX.h"
 #if (LPUART_INSTANCE_COUNT > 0U)
     #include "lin_lpuart_driver.h"
 #endif

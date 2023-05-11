@@ -45,9 +45,6 @@
 
 #include <stdint.h>
 #include "lin_driver.h"
-#ifndef LIN_STACK_GEN_LIB
-#include "peripherals_lin_0.h"
-#endif
 
 /* Implements    : SUPPORT_MASTER_MODE_Class */
 #define SUPPORT_MASTER_MODE     1U /* Equal to 1 when have at least one master interface */
