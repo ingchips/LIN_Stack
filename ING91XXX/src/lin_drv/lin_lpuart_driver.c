@@ -1160,7 +1160,7 @@ void LIN_LPUART_DRV_TimeoutService(uint32_t instance)
 
     switch (state)
     {
-#if 0
+#ifdef LIN_DRIVER_TASK
         /* If the node is SENDING BREAK or SYNC or PID. */
         case LIN_NODE_STATE_SEND_BREAK_FIELD:
         case LIN_NODE_STATE_RECEIVING_BREAK:
@@ -1234,7 +1234,7 @@ void LIN_LPUART_DRV_TimeoutService(uint32_t instance)
 
                 if (linCurrentState->isTxBlocking == false)
                 {
-                    #if 1
+                    #ifndef LIN_DRIVER_TASK
                     /* Emit event to upper. */
                     linEmitEvtToUpper(instance, linCurrentState, LIN_NO_EVENT);
                     #else
@@ -1266,7 +1266,7 @@ void LIN_LPUART_DRV_TimeoutService(uint32_t instance)
                 /* Check if the reception is non-blocking */
                 if (linCurrentState->isRxBlocking == false)
                 {
-                    #if 1
+                    #ifndef LIN_DRIVER_TASK
                     /* Emit event to upper. */
                     linEmitEvtToUpper(instance, linCurrentState, LIN_NO_EVENT);
                     #else
