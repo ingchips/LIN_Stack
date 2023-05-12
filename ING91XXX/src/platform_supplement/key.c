@@ -6,8 +6,11 @@
 #include "main.h"
 #include "lin_user_def.h"
 #include "key.h"
-
+#ifdef LIN_DRIVER_TASK
+#include "lin_driver_task.h"
+#else
 #include "lin_stack_task.h"
+#endif
 #include "gpio_irq_management.h"
 
 static void key_pressed_callback(uint32_t num){
