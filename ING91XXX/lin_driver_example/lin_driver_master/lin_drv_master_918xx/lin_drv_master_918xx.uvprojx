@@ -56,7 +56,7 @@
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
           <ListingPath>.\listing\</ListingPath>
-          <HexFormatSelection>1</HexFormatSelection>
+          <HexFormatSelection>0</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
           <BeforeCompile>
@@ -120,7 +120,7 @@
         </DllOption>
         <DebugOption>
           <OPTHX>
-            <HexSelection>1</HexSelection>
+            <HexSelection>0</HexSelection>
             <HexRangeLowAddress>0</HexRangeLowAddress>
             <HexRangeHighAddress>0</HexRangeHighAddress>
             <HexOffset>0</HexOffset>
@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,  BOARD_ID=BOARD_ING91881B_02_02_05, BOARD_USE_RGB_LED,  LIN_DRIVER_TASK,</Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\..\ING918XX_SDK_SOURCE\bundles\typical\inc;..\..\..\..\..\ING918XX_SDK_SOURCE\bundles\typical\inc\os;..\..\..\..\..\ING918XX_SDK_SOURCE\src\BSP;..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib;..\..\..\..\..\ING918XX_SDK_SOURCE\src\StartUP\ing918;..\..\..\..\..\ING918XX_SDK_SOURCE\src\Tools;..\..\..\..\..\ING918XX_SDK_SOURCE\src;..\..\..\src\lin_drv;..\..\..\src\lin_drv\drv_api;..\..\..\src\lin_drv\drv_hw;..\..\..\src\platform_supplement;..\src</IncludePath>
+              <IncludePath>../../../../../ING918XX_SDK_SOURCE/bundles/typical/inc;../../../../../ING918XX_SDK_SOURCE/bundles/typical/inc/os;../../../../../ING918XX_SDK_SOURCE/src/BSP;../../../../../ING918XX_SDK_SOURCE/src/FWlib;../../../../../ING918XX_SDK_SOURCE/src/StartUP/ing918;../../../../../ING918XX_SDK_SOURCE/src/Tools;../../../../../ING918XX_SDK_SOURCE/src;..\..\..\src\lin_drv;..\..\..\src\lin_drv\drv_api;..\..\..\src\lin_drv\drv_hw;..\..\..\src\platform_supplement;..\src</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -439,14 +439,14 @@
           <GroupName>BSP</GroupName>
           <Files>
             <File>
-              <FileName>board.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\BSP\board.c</FilePath>
-            </File>
-            <File>
               <FileName>eflash.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\BSP\eflash.c</FilePath>
+            </File>
+            <File>
+              <FileName>board.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\BSP\board.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -454,19 +454,9 @@
           <GroupName>FWlib</GroupName>
           <Files>
             <File>
-              <FileName>peripheral_gpio.c</FileName>
+              <FileName>peripheral_uart.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>peripheral_pinctrl.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_pinctrl.c</FilePath>
-            </File>
-            <File>
-              <FileName>peripheral_sysctrl.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_sysctrl.c</FilePath>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_uart.c</FilePath>
             </File>
             <File>
               <FileName>peripheral_timer.c</FileName>
@@ -474,9 +464,19 @@
               <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_timer.c</FilePath>
             </File>
             <File>
-              <FileName>peripheral_uart.c</FileName>
+              <FileName>peripheral_sysctrl.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_uart.c</FilePath>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_sysctrl.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_pinctrl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_pinctrl.c</FilePath>
+            </File>
+            <File>
+              <FileName>peripheral_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\ING918XX_SDK_SOURCE\src\FWlib\peripheral_gpio.c</FilePath>
             </File>
           </Files>
         </Group>

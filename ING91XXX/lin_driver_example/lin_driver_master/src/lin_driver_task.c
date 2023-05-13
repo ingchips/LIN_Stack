@@ -68,8 +68,13 @@ uint32_t timer_isr(void *user_data){
     /* Increment overflow count */
     timerOverflowInterruptCount++;
     
+#if (USE_ING918X)
     /* Clear compare flag */
     TMR_IntClr(LIN0_TMO_NS_TIMER_SEL);
+#else
+    /* Clear compare flag */
+    TMR_IntClr(LIN0_TMO_NS_TIMER_SEL, LIN0_TMO_NS_TIMER_CH_ID, LIN0_TMO_NS_TIMER_MASK);
+#endif
     return 0;
 }
 
@@ -83,7 +88,11 @@ uint32_t lin0TimerGetTimeIntervalCallback0(uint32_t *ns)
     static uint32_t previousCountValue = 0UL;
     uint32_t counterValue;
 
+#if (USE_ING918X)
     counterValue = TMR_GetCNT(LIN0_TMO_NS_TIMER_SEL);
+#else
+    counterValue = TMR_GetCNT(LIN0_TMO_NS_TIMER_SEL, LIN0_TMO_NS_TIMER_CH_ID);
+#endif
     *ns = ((uint32_t)(counterValue + timerOverflowInterruptCount * LIN0_TMO_NS_TIMER_COMPARE_VAL - previousCountValue)) * 1000U / LIN0_TMO_NS_TIMER_TICKS_1US;
     timerOverflowInterruptCount = 0UL;
     previousCountValue = counterValue;
@@ -438,6 +447,7 @@ void lin_task(void *pdata)
 
 void lin_timeout_ns_timer_init(void)
 {
+#if (USE_ING918X)
     // 500 us timer
     // setup timer 1: 2khz
     SYSCTRL_ClearClkGateMulti((1 << LIN0_TMO_NS_TIMER_CLK_GATE));
@@ -447,6 +457,16 @@ void lin_timeout_ns_timer_init(void)
     TMR_Reload(LIN0_TMO_NS_TIMER_SEL);
     TMR_Enable(LIN0_TMO_NS_TIMER_SEL);
     platform_set_irq_callback(LIN0_TMO_NS_TIMER_IRQ_CB_SEL, timer_isr, NULL);
+#else
+    // 500 us timer
+    // setup timer 1: 2khz
+    SYSCTRL_ClearClkGateMulti((1 << LIN0_TMO_NS_TIMER_CLK_GATE));    
+    TMR_SetOpMode(LIN0_TMO_NS_TIMER_SEL, LIN0_TMO_NS_TIMER_CH_ID, LIN0_TMO_NS_TIMER_OP_MODE_SEL, LIN0_TMO_NS_TIMER_CLK_SEL, 0);
+    TMR_SetReload(LIN0_TMO_NS_TIMER_SEL, LIN0_TMO_NS_TIMER_CH_ID, LIN0_TMO_NS_TIMER_COMPARE_VAL);
+    TMR_IntEnable(LIN0_TMO_NS_TIMER_SEL, LIN0_TMO_NS_TIMER_CH_ID, LIN0_TMO_NS_TIMER_MASK);
+    TMR_Enable(LIN0_TMO_NS_TIMER_SEL, LIN0_TMO_NS_TIMER_CH_ID, LIN0_TMO_NS_TIMER_MASK);  
+    platform_set_irq_callback(LIN0_TMO_NS_TIMER_IRQ_CB_SEL, timer_isr, NULL);
+#endif
     return;
 }
 
