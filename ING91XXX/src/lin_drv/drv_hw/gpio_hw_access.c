@@ -42,6 +42,7 @@ void GPIO_ForUartRxIrqRegister(f_platform_irq_cb __handler)
 void GPIO_ForUartInit(void)
 {
     SYSCTRL_ClearClkGateMulti(1 << SYSCTRL_ClkGate_APB_GPIO0);
+    SYSCTRL_ClearClkGateMulti(1 << SYSCTRL_ClkGate_APB_GPIO1);
     SYSCTRL_ClearClkGateMulti(1 << SYSCTRL_ClkGate_APB_PinCtrl);
     SYSCTRL_ClearClkGateMulti(1 << LIN0_UART_CLK_GATE);
 
