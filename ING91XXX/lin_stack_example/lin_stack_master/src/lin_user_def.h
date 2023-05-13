@@ -5,6 +5,7 @@
 #include <string.h>
 #include <stdint.h>
 #include "ingsoc.h"
+#include "board.h"
 
 #define USE_ING918X     (INGCHIPS_FAMILY == INGCHIPS_FAMILY_918)
 
