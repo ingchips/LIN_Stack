@@ -54,9 +54,9 @@
 #define LIN0_TMO_NS_TIMER_CLK_GATE           SYSCTRL_ClkGate_APB_TMR1
 #define LIN0_TMO_NS_TIMER_IRQ_CB_SEL         PLATFORM_CB_IRQ_TIMER1
 #define LIN0_TMO_NS_TIMER_OP_MODE_SEL        TMR_CTL_OP_MODE_32BIT_TIMER_x1
-#define LIN0_TMO_NS_TIMER_CLK_SEL            TMR_CLK_MODE_APB
+#define LIN0_TMO_NS_TIMER_CLK_SEL            TMR_CLK_MODE_EXTERNAL
 #define LIN0_TMO_NS_TIMER_CH_ID              (uint8_t)(0U)
-#define LIN0_TMO_NS_TIMER_NUM                (uint8_t)(1U) /* 0U=APB_TMR1, 1U=APB_TMR1, 2U=APB_TMR2 */
+#define LIN0_TMO_NS_TIMER_NUM                (uint8_t)(0U) /* For 32bit timer, only zero support. */
 #define LIN0_TMO_NS_TIMER_MASK               (uint8_t)(1U << LIN0_TMO_NS_TIMER_NUM)
 #define TMR_CLK_FREQ                         (TMR_GetClk(LIN0_TMO_NS_TIMER_SEL, LIN0_TMO_NS_TIMER_CH_ID))
 #endif
