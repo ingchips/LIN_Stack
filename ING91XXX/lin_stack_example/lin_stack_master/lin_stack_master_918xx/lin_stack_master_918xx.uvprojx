@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER,  BOARD_ID=BOARD_ING91881B_02_02_05, BOARD_USE_RGB_LED</Define>
               <Undefine></Undefine>
-              <IncludePath>../../../../../ING918XX_SDK_SOURCE/bundles/typical/inc;../../../../../ING918XX_SDK_SOURCE/bundles/typical/inc/os;../../../../../ING918XX_SDK_SOURCE/src/BSP;../../../../../ING918XX_SDK_SOURCE/src/FWlib;../../../../../ING918XX_SDK_SOURCE/src/StartUP/ing918;../../../../../ING918XX_SDK_SOURCE/src/Tools;../../../../../ING918XX_SDK_SOURCE/src;..\src;..\src\lin_cfg;..\..\..\src\platform_supplement;..\..\..\src\lin_drv;..\..\..\src\lin_drv\drv_api;..\..\..\src\lin_drv\drv_hw;..\..\..\src\lin_stack_lib\include</IncludePath>
+              <IncludePath>../../../../../ING918XX_SDK_SOURCE/bundles/typical/inc;../../../../../ING918XX_SDK_SOURCE/bundles/typical/inc/os;../../../../../ING918XX_SDK_SOURCE/src/BSP;../../../../../ING918XX_SDK_SOURCE/src/FWlib;../../../../../ING918XX_SDK_SOURCE/src/StartUP/ing918;../../../../../ING918XX_SDK_SOURCE/src/Tools;../../../../../ING918XX_SDK_SOURCE/src;..\..\..\src\lin_drv;..\..\..\src\lin_drv\drv_api;..\..\..\src\lin_drv\drv_hw;..\..\..\src\platform_supplement;..\src;..\src\lin_cfg;..\..\..\src\lin_stack_lib\include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
