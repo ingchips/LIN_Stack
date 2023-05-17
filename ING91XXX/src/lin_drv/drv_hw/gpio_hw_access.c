@@ -64,6 +64,7 @@ void GPIO_ForUartInit(void)
     GIO_SetDirection(LIN0_UART_IO_RX, GIO_DIR_INPUT);
     PINCTRL_Pull(LIN0_UART_IO_RX, PINCTRL_PULL_UP);
     PINCTRL_SelUartRxdIn(LIN0_UART_PORT_SEL, LIN0_UART_IO_RX); // Connect uart rx to a gpio.
+    PINCTRL_SetPadMux(LIN0_UART_IO_RX, IO_SOURCE_GPIO); // Let uart_rx_io work as general gpio and uart_rx at the same time.
     
     GPIO_IRQ_Management_add_handler(gpio_isr_for_uart_rx);
 }
@@ -100,6 +101,10 @@ GPIO_SetEdge_t GPIO_GetGpioEdgePolarity(const GIO_Index_t io_index)
 {
     GPIO_SetEdge_t edge;
     DEF_GIO_AND_PIN(io_index);
+    if(!(pDef->IntEn & (1 << index)))
+    {
+        return GI_DISABLE;
+    }
     int reg_index = index / 8;
     int offset = (index & 0x7) * 4;
     uint8_t int_mode = ((pDef->IntMod[reg_index] >> offset) & 0x7);
@@ -120,24 +125,18 @@ GPIO_SetEdge_t GPIO_GetGpioEdgePolarity(const GIO_Index_t io_index)
 
 void GPIO_SetGpioEdgePolarity(const GIO_Index_t io_index, GPIO_SetEdge_t edge)
 {
-    uint8_t int_mode;
-    DEF_GIO_AND_PIN(io_index);
     switch(edge)
     {
         case GI_FALL_EDGE:
-            int_mode = 5;
+            GIO_ConfigIntSource(io_index, GIO_INT_EN_LOGIC_LOW_OR_FALLING_EDGE, GIO_INT_EDGE);
             break;
         case GI_RISE_EDGE:
-            int_mode = 6;
+            GIO_ConfigIntSource(io_index, GIO_INT_EN_LOGIC_HIGH_OR_RISING_EDGE, GIO_INT_EDGE);
             break;
         default:
-            int_mode = 0;
+            GIO_ConfigIntSource(io_index, 0, GIO_INT_EDGE);
             break;
     }
-    int reg_index = index / 8;
-    int offset = (index & 0x7) * 4;
-    pDef->IntMod[reg_index] &= ~(0x7 << offset);
-    pDef->IntMod[reg_index] |= int_mode << offset;
 }
 
 #endif
