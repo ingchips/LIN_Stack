@@ -73,7 +73,7 @@
 #define LIN0_UART_IO_RX                      GIO_GPIO_19
 #elif (BOARD_ID == BOARD_DB72C8K1A) //916xx
 #define LIN0_UART_IO_TX                      GIO_GPIO_21
-#define LIN0_UART_IO_RX                      GIO_GPIO_22
+#define LIN0_UART_IO_RX                      GIO_GPIO_15
 #endif
 #define LIN0_UART_PORT_SEL                   UART_PORT_1
 #define LIN0_UART_IO_TX_SRC_SEL              IO_SOURCE_UART1_TXD
