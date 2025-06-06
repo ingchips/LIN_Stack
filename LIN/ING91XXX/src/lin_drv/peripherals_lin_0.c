@@ -29,7 +29,12 @@ lin_user_config_t lin0_InitConfig0 =
     .autobaudEnable               = LIN0_AUTO_BAUD_EN,                  /* Disable auto baudRate */
     .timerGetTimeIntervalCallback = lin0TimerGetTimeIntervalCallback0,
     .classicPID                   = NULL,                               /* ClassicPID */
-    .numOfClassicPID              = 255U,                               /* Number of classicPID */
+    .numOfClassicPID              = 0U,     /*  Number of classicPID.
+                                                = 0U        : all enhanced checksum except 0x3C/0x7D/0xFE/0xBF
+                                                = 255U      : all classic checksum
+                                                = N(others) : if classicPID=NULL : all enhanced checksum except 0x3C/0x7D/0xFE/0xBF
+                                                              else               : all enhanced checksum except classicPID[0 ~ (N-1)]/0x3C/0x7D/0xFE/0xBF
+                                            */
     .rx_io_index                  = LIN0_UART_IO_RX,                    /* Rx gpio index */
 };
 

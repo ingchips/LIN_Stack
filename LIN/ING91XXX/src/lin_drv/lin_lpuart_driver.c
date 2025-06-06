@@ -559,7 +559,7 @@ static uint8_t LIN_LPUART_DRV_MakeChecksumByte(uint32_t instance,
 
     if(numOfClassicPID == 255U)
     {
-        /*all frame use enhanced checksum */
+        /*all frame use classic checksum */
         checkSum = 0U;
     }
     else
